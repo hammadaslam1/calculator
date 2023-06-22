@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        table, tr, td{
+            border-collapse: collapse;
+            border-width: 0;
+        }
+    </style>
+</head>
+<body class="">
+    <div class="h-screen bg-gray-400 flex justify-center content-center">
+        <div class="w-[300px] bg-gray-900 text-white self-center p-1 border border-gray-900">
+            <div class="bg-gray-800 w-full text-white text-right  flex flex-col p-1">
+                <div class="w-full h-10 text-lg px-3" id="question">
+                    
+                </div>
+                <div class="w-full h-14 text-3xl px-3" id="answer">
+                    
+                </div>
+            </div>
+            <div class="bg-slate-600 w-full text-white flex flex-col p-1">
+                <table class="">
+                    <tr class="h-16 ">
+                        <td class="text-center"><button class="bg-slate-700 w-[67px] hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3" id="clear">C</button></td>
+                        <td class="text-center"><button class="bg-slate-700 w-[67px] hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3" id="divide">/</button></td>
+                        <td class="text-center"><button class="bg-slate-700 w-[67px] hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3" id="multiply">*</button></td>
+                        <td class="text-center"><button class="bg-slate-700 w-[67px] hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3" id="back"><-</button></td>
+                    </tr>
+                    <tr class="h-16 ">
+                        <td class="text-center"><button class="bg-slate-700 w-[67px] hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3" id="seven">7</button></td>
+                        <td class="text-center"><button class="bg-slate-700 w-[67px] hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3" id="eight">8</button></td>
+                        <td class="text-center"><button class="bg-slate-700 w-[67px] hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3" id="nine">9</button></td>
+                        <td class="text-center"><button class="bg-slate-700 w-[67px] hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3" id="minus">-</button></td>
+                    </tr>
+                    <tr class="h-16 ">
+                        <td class="text-center"><button class="bg-slate-700 w-[67px] hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3" id="four">4</button></td>
+                        <td class="text-center"><button class="bg-slate-700 w-[67px] hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3" id="five">5</button></td>
+                        <td class="text-center"><button class="bg-slate-700 w-[67px] hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3" id="six">6</button></td>
+                        <td class="text-center"><button class="bg-slate-700 w-[67px] hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3" id="seve">+</button></td>
+                    </tr>
+                    <tr class="h-16 ">
+                        <td class="text-center"><button class="bg-slate-700 w-[67px] hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3" id="">1</button></td>
+                        <td class="text-center"><button class="bg-slate-700 w-[67px] hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3" id="">2</button></td>
+                        <td class="text-center"><button class="bg-slate-700 w-[67px] hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3" id="">3</button></td>
+                        <td class="text-center"><button class="bg-slate-700 w-[67px] hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3" id="">^</button></td>
+                    </tr>
+                    <tr class="h-16 ">
+                        <td class="text-center"><button class="bg-slate-700 w-[67px] hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3" id="">%</button></td>
+                        <td class="text-center"><button class="bg-slate-700 w-[67px] hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3" id="">0</button></td>
+                        <td class="text-center"><button class="bg-slate-700 w-[67px] hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3" id="">.</button></td>
+                        <td class="text-center"><button class="bg-slate-700 w-[67px] hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3" id="">=</button></td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="calculator.js"></script>
+</html>
