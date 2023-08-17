@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      table,
+      tr,
+      td {
+        border-collapse: collapse;
+        border-width: 0;
+      }
+      button {
+        border-radius: 5px;
+        box-shadow: inset 0 0 20px 3px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body class="">
+    <div class="h-screen bg-gray-200 flex justify-center content-center">
+      <div
+        class=" bg-gray-400 rounded-xl self-center p-2 border border-gray-400 shadow-2xl"
+      >
+        <div
+          class="bg-slate-500 w-full rounded-t-lg text-right flex flex-col p-3"
+        >
+          <div class="w-full bg-gray-700 rounded-t-md h-10 px-3" id="">
+            <input
+              type="text"
+              name="question"
+              class="h-full w-full text-3xl text-white bg-transparent"
+              id="question"
+              readonly
+            />
+          </div>
+          <div class="w-full h-14 bg-gray-700 rounded-b-md text-3xl px-3" id="">
+            <input
+              type="text"
+              name="answer"
+              class="h-full w-full text-4xl text-right text-white bg-transparent"
+              id="answer"
+              readonly
+            />
+          </div>
+        </div>
+        <div
+          class="bg-slate-500 w-full rounded-b-lg text-white grid grid-cols-4 gap-2 p-2"
+        >
+          <button
+            class="w-full bg-red-800  hover:bg-red-900 active:bg-red-700 text-3xl h-full py-3"
+            id="clear"
+            onclick="clearDisplay()"
+          >
+            C
+          </button>
+
+          <button
+            class="w-full bg-slate-700 hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3"
+            id="divide"
+            onclick="appendOperator('/')"
+          >
+            /
+          </button>
+
+          <button
+            class="w-full bg-slate-700  hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3"
+            id="multiply"
+            onclick="appendOperator('*')"
+          >
+            *
+          </button>
+
+          <button
+            class="w-full bg-blue-800  hover:bg-blue-900 active:bg-blue-700 text-3xl h-full py-3"
+            id="back"
+            onclick="backOperator()"
+          >
+            <-
+          </button>
+
+          <button
+            class="w-full bg-slate-700  hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3"
+            id="seven"
+            onclick="appendNumber('7')"
+          >
+            7
+          </button>
+
+          <button
+            class="w-full bg-slate-700  hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3"
+            id="eight"
+            onclick="appendNumber('8')"
+          >
+            8
+          </button>
+
+          <button
+            class="w-full bg-slate-700  hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3"
+            id="nine"
+            onclick="appendNumber('9')"
+          >
+            9
+          </button>
+
+          <button
+            class="w-full bg-slate-700  hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3"
+            id="minus"
+            onclick="appendOperator('-')"
+          >
+            -
+          </button>
+
+          <button
+            class="w-full bg-slate-700  hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3"
+            id="four"
+            onclick="appendNumber('4')"
+          >
+            4
+          </button>
+
+          <button
+            class="w-full bg-slate-700 hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3"
+            id="five"
+            onclick="appendNumber('5')"
+          >
+            5
+          </button>
+
+          <button
+            class="w-full bg-slate-700  hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3"
+            id="six"
+            onclick="appendNumber('6')"
+          >
+            6
+          </button>
+
+          <button
+            class="w-full bg-slate-700  hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3"
+            id="plus"
+            onclick="appendOperator('+')"
+          >
+            +
+          </button>
+
+          <button
+            class="w-full bg-slate-700  hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3"
+            id="one"
+            onclick="appendNumber('1')"
+          >
+            1
+          </button>
+
+          <button
+            class="w-full bg-slate-700  hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3"
+            id="two"
+            onclick="appendNumber('2')"
+          >
+            2
+          </button>
+
+          <button
+            class="w-full bg-slate-700  hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3"
+            id="three"
+            onclick="appendNumber('3')"
+          >
+            3
+          </button>
+
+          <button
+            class="w-full bg-slate-700  hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3"
+            id="power"
+            onclick="appendOperator('^')"
+          >
+            ^
+          </button>
+
+          <button
+            class="w-full bg-slate-700  hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3"
+            id="mod"
+            onclick="appendOperator('%')"
+          >
+            %
+          </button>
+
+          <button
+            class="w-full bg-slate-700  hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3"
+            id="zero"
+            onclick="appendNumber('0')"
+          >
+            0
+          </button>
+
+          <button
+            class="w-full bg-slate-700  hover:bg-slate-800 active:bg-slate-900 text-3xl h-full py-3"
+            id="point"
+            onclick="appendNumber('.')"
+          >
+            .
+          </button>
+
+          <button
+            class="w-full bg-green-800  hover:bg-green-900 active:bg-green-700 text-3xl h-full py-3"
+            id="result"
+            onclick="calculateResult()"
+          >
+            =
+          </button>
+        </div>
+        <div class="text-slate-700 text-right font-semibold px-2">
+            Created by Hammad Aslam
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="calculator.js"></script>
+</html>

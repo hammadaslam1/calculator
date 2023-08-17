@@ -11,6 +11,14 @@
       function appendOperator(operator) {
         display.value += operator;
       }
+      function backOperator() {
+        if (display.value) {
+          
+          let val = display.value.split('');
+          val.length = val.length-1;
+          display.value = val.join('');
+        }
+      }
 
       function clearDisplay() {
         display.value = '';
